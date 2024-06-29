@@ -71,6 +71,7 @@ a {
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
   text-align: center;
+  position: relative;
 }
 a:hover {
   color: #4b71e4;
@@ -352,4 +353,26 @@ input:hover {
   color: #ccc;
   font-size: 18px;
   padding: 10px;
+}
+
+.cartimg::after {
+  content: var(--cart-count, '0');
+  position: absolute;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  padding: 6px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  right: 0;
+  top: 0;
+  font-size: 10px;
 }

@@ -52,10 +52,13 @@ function UpdateCart() {
     Cart.innerHTML = "";
     if (!cartItems || cartItems.length === 0) {
       Cart.innerHTML = "No Items Yet";
-      return
-    } 
+      document.documentElement.style.setProperty('--cart-count', `'0'`);
+      return;
+    }
 
     if (cartItems) {
+      let totalQuantity = cartItems.reduce((total, item) => total + item.quntity, 0);
+      document.documentElement.style.setProperty('--cart-count', `'${totalQuantity}'`);
       cartItems.forEach((item) => {
         Cart.innerHTML += `<div class="store-info" id="${item.id}">
       <div class="store-image">
